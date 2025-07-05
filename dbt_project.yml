@@ -27,3 +27,9 @@ models:
     mart:
       +schema: mart
       +materialized: table
+
+seeds:
+  dbt_project:           # Match your project name
+    +schema: seed_data   # Schema where seeds will be loaded
+    +database: medina_np # Optional if same as models
+    +quote_columns: true # Optional: quotes column names (for case sensitivity)

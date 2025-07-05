@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: sales_order
+    description: "Sales_order  table"
+    columns:
+      - name: order_id
+        description: "Foreign key to orders table"
+        tests:
+          - relationships:
+              to: ref('sales_order_mart')
+              field: order_id

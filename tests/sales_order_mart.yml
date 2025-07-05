@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: sales_order_mart
+    description: "Sales order mart table"
+    columns:
+      - name: order_id
+        description: "Primary key"
+        tests:
+          - not_null
+          - unique
+
+      - name: total_amount
+        description: "Order total"
+        tests:
+          - not_null
+
+      - name: days_to_ship
+        description: "Days taken to ship the order"
+        tests:
+          - not_null
+
+      - name: simplified_order_status
+        description: "Normalized order status"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['open', 'closed', 'other']
