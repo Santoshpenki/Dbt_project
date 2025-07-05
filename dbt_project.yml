@@ -36,7 +36,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  Dbt_project:
-    # Applies to all files under models/
-    example:
+  dbt_project:
+    +database: medina_np
+    stg:
+      +schema: stg
+      +materialized: view
+    mart:
+      +schema: mart
       +materialized: table
